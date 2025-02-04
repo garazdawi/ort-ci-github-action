@@ -522,6 +522,7 @@ runs:
       if: contains(inputs.run, 'reporter')
       run: |
         echo -e "\e[1;33m Running ORT Reporter... "
+        set -x
         docker run \
         --mount type=bind,source=$HOME,target=/home/ort \
         -e JDK_JAVA_OPTIONS="--illegal-access=warn -Xmx5120m" \
